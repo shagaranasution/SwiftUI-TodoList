@@ -11,6 +11,14 @@
 		FF2DD8582B359DD900C90A87 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2DD8572B359DD900C90A87 /* ContentView.swift */; };
 		FF2DD85A2B359DDE00C90A87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF2DD8592B359DDE00C90A87 /* Assets.xcassets */; };
 		FF2DD85D2B359DDE00C90A87 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF2DD85C2B359DDE00C90A87 /* Preview Assets.xcassets */; };
+		FF2DD8652B35A42300C90A87 /* TLTodoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2DD8642B35A42300C90A87 /* TLTodoListView.swift */; };
+		FF2DD8692B35B51D00C90A87 /* TLTodoCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2DD8682B35B51D00C90A87 /* TLTodoCreationView.swift */; };
+		FF2DD86B2B35B5CC00C90A87 /* TLTodoTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2DD86A2B35B5CC00C90A87 /* TLTodoTextFieldView.swift */; };
+		FF6E7DDB2B39556F0001C88F /* TLTodoStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6E7DDA2B39556F0001C88F /* TLTodoStatusView.swift */; };
+		FF6E7DDE2B395AC80001C88F /* TLTodoListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6E7DDD2B395AC80001C88F /* TLTodoListViewViewModel.swift */; };
+		FF6E7DE22B395F220001C88F /* TLModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6E7DE12B395F220001C88F /* TLModelData.swift */; };
+		FFCF33242B368A6300143DED /* TLTodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCF33232B368A6300143DED /* TLTodoItem.swift */; };
+		FFCF33262B368C6000143DED /* TLTodoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCF33252B368C6000143DED /* TLTodoItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +27,14 @@
 		FF2DD8572B359DD900C90A87 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FF2DD8592B359DDE00C90A87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF2DD85C2B359DDE00C90A87 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FF2DD8642B35A42300C90A87 /* TLTodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLTodoListView.swift; sourceTree = "<group>"; };
+		FF2DD8682B35B51D00C90A87 /* TLTodoCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLTodoCreationView.swift; sourceTree = "<group>"; };
+		FF2DD86A2B35B5CC00C90A87 /* TLTodoTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLTodoTextFieldView.swift; sourceTree = "<group>"; };
+		FF6E7DDA2B39556F0001C88F /* TLTodoStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLTodoStatusView.swift; sourceTree = "<group>"; };
+		FF6E7DDD2B395AC80001C88F /* TLTodoListViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLTodoListViewViewModel.swift; sourceTree = "<group>"; };
+		FF6E7DE12B395F220001C88F /* TLModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLModelData.swift; sourceTree = "<group>"; };
+		FFCF33232B368A6300143DED /* TLTodoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLTodoItem.swift; sourceTree = "<group>"; };
+		FFCF33252B368C6000143DED /* TLTodoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLTodoItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +68,9 @@
 			isa = PBXGroup;
 			children = (
 				FF2DD8552B359DD900C90A87 /* TodoListApp.swift */,
-				FF2DD8572B359DD900C90A87 /* ContentView.swift */,
+				FFCF33222B368A4100143DED /* Models */,
+				FF2DD8632B35A39100C90A87 /* Views */,
+				FF6E7DDC2B395AA20001C88F /* ViewModels */,
 				FF2DD8592B359DDE00C90A87 /* Assets.xcassets */,
 				FF2DD85B2B359DDE00C90A87 /* Preview Content */,
 			);
@@ -65,6 +83,36 @@
 				FF2DD85C2B359DDE00C90A87 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FF2DD8632B35A39100C90A87 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FF2DD8572B359DD900C90A87 /* ContentView.swift */,
+				FF2DD8642B35A42300C90A87 /* TLTodoListView.swift */,
+				FF2DD8682B35B51D00C90A87 /* TLTodoCreationView.swift */,
+				FF2DD86A2B35B5CC00C90A87 /* TLTodoTextFieldView.swift */,
+				FFCF33252B368C6000143DED /* TLTodoItemView.swift */,
+				FF6E7DDA2B39556F0001C88F /* TLTodoStatusView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FF6E7DDC2B395AA20001C88F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				FF6E7DDD2B395AC80001C88F /* TLTodoListViewViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		FFCF33222B368A4100143DED /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FFCF33232B368A6300143DED /* TLTodoItem.swift */,
+				FF6E7DE12B395F220001C88F /* TLModelData.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +185,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFCF33262B368C6000143DED /* TLTodoItemView.swift in Sources */,
+				FF2DD8652B35A42300C90A87 /* TLTodoListView.swift in Sources */,
+				FF2DD86B2B35B5CC00C90A87 /* TLTodoTextFieldView.swift in Sources */,
 				FF2DD8582B359DD900C90A87 /* ContentView.swift in Sources */,
+				FF2DD8692B35B51D00C90A87 /* TLTodoCreationView.swift in Sources */,
+				FF6E7DDE2B395AC80001C88F /* TLTodoListViewViewModel.swift in Sources */,
+				FFCF33242B368A6300143DED /* TLTodoItem.swift in Sources */,
+				FF6E7DE22B395F220001C88F /* TLModelData.swift in Sources */,
 				FF2DD8562B359DD900C90A87 /* TodoListApp.swift in Sources */,
+				FF6E7DDB2B39556F0001C88F /* TLTodoStatusView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,11 +331,13 @@
 				DEVELOPMENT_TEAM = FMMGHKGHHC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Todo List";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,11 +362,13 @@
 				DEVELOPMENT_TEAM = FMMGHKGHHC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Todo List";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
