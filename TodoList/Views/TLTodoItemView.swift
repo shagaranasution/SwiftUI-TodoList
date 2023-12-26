@@ -33,7 +33,7 @@ public struct TLTodoItemView: View {
                     .fontWeight(.regular)
                     .lineLimit(2)
                 
-                if let description = todo.description {
+                if let description = todo.note {
                     Text(description)
                         .font(.caption)
                         .fontWeight(.light)
@@ -57,13 +57,13 @@ public struct TLTodoItemView: View {
 #Preview {
     let item = TLTodoItem(
         title: "Going to market", 
-        description: nil,
+        note: nil,
         dueDate: Date(),
         completed: true,
         archived: false)
     let item2 = TLTodoItem(
         title: "Meet Chara",
-        description: "Do not forget to bring book she want to borrow",
+        note: "Do not forget to bring book she want to borrow",
         dueDate: Date(timeIntervalSinceNow: TimeInterval(60 * 60 * 5)),
         completed: false,
         archived: false)

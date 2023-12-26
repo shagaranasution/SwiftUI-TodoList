@@ -9,7 +9,7 @@ import Foundation
 
 public class TLTodoListViewViewModel: ObservableObject {
  
-    @Published public var todos: [TLTodoItem] = []
+    @Published private(set) var todos: [TLTodoItem] = []
     
     init() {
         getTodos()

@@ -10,7 +10,7 @@ import Foundation
 public struct TLTodoItem: Identifiable, Equatable {
     public let id: String = UUID().uuidString
     var title: String
-    var description: String?
+    var note: String?
     var dueDate: Date
     var completed: Bool
     var archived: Bool
