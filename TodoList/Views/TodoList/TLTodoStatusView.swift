@@ -9,7 +9,7 @@ import SwiftUI
 
 public struct TLTodoStatusView: View {
     
-    public var completed: Bool
+    @Binding public var completed: Bool
     
     public var body: some View {
         let imageName: String = completed ? "checkmark.seal.fill" : "circle.fill"
@@ -20,11 +20,12 @@ public struct TLTodoStatusView: View {
             .resizable()
             .frame(width: width)
             .frame(height: height)
-            .animation(completed ? .bouncy : nil, value: completed)
+            .offset(x: completed ? 2 : 0)
+            .offset(y: completed ? -2 : 0)
     }
     
 }
 
 #Preview {
-    TLTodoStatusView(completed: true)
+    TLTodoStatusView(completed: .constant(true))
 }

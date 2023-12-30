@@ -13,12 +13,20 @@
 		FF2DD85D2B359DDE00C90A87 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF2DD85C2B359DDE00C90A87 /* Preview Assets.xcassets */; };
 		FF2DD8652B35A42300C90A87 /* TLTodoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2DD8642B35A42300C90A87 /* TLTodoListView.swift */; };
 		FF2DD8692B35B51D00C90A87 /* TLTodoCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2DD8682B35B51D00C90A87 /* TLTodoCreationView.swift */; };
-		FF2DD86B2B35B5CC00C90A87 /* TLTodoTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2DD86A2B35B5CC00C90A87 /* TLTodoTextFieldView.swift */; };
+		FF2DD86B2B35B5CC00C90A87 /* TLTextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2DD86A2B35B5CC00C90A87 /* TLTextInput.swift */; };
+		FF30F84A2B3D867100204C49 /* TodoEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF30F8482B3D867100204C49 /* TodoEntity+CoreDataClass.swift */; };
+		FF30F84B2B3D867100204C49 /* TodoEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF30F8492B3D867100204C49 /* TodoEntity+CoreDataProperties.swift */; };
+		FF30F84D2B3D8BB200204C49 /* TLNoTodosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF30F84C2B3D8BB100204C49 /* TLNoTodosView.swift */; };
+		FF68098C2B3D81630064A7B0 /* MainContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF68098A2B3D81630064A7B0 /* MainContainer.xcdatamodeld */; };
 		FF6E7DDB2B39556F0001C88F /* TLTodoStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6E7DDA2B39556F0001C88F /* TLTodoStatusView.swift */; };
-		FF6E7DDE2B395AC80001C88F /* TLTodoListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6E7DDD2B395AC80001C88F /* TLTodoListViewViewModel.swift */; };
+		FF6E7DDE2B395AC80001C88F /* TLTodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6E7DDD2B395AC80001C88F /* TLTodoViewModel.swift */; };
 		FF6E7DE22B395F220001C88F /* TLModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6E7DE12B395F220001C88F /* TLModelData.swift */; };
+		FF8639252B3ADBA000150A4F /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8639242B3ADBA000150A4F /* RoundedCorner.swift */; };
+		FF8639272B3ADBFA00150A4F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8639262B3ADBFA00150A4F /* Extensions.swift */; };
+		FFC7ED662B3D6AF3004769EB /* TLPersistenceMananger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7ED652B3D6AF3004769EB /* TLPersistenceMananger.swift */; };
 		FFCF33242B368A6300143DED /* TLTodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCF33232B368A6300143DED /* TLTodoItem.swift */; };
 		FFCF33262B368C6000143DED /* TLTodoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCF33252B368C6000143DED /* TLTodoItemView.swift */; };
+		FFE0FB9D2B3A811E007DA560 /* TLSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE0FB9C2B3A811E007DA560 /* TLSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,12 +37,20 @@
 		FF2DD85C2B359DDE00C90A87 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FF2DD8642B35A42300C90A87 /* TLTodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLTodoListView.swift; sourceTree = "<group>"; };
 		FF2DD8682B35B51D00C90A87 /* TLTodoCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLTodoCreationView.swift; sourceTree = "<group>"; };
-		FF2DD86A2B35B5CC00C90A87 /* TLTodoTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLTodoTextFieldView.swift; sourceTree = "<group>"; };
+		FF2DD86A2B35B5CC00C90A87 /* TLTextInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLTextInput.swift; sourceTree = "<group>"; };
+		FF30F8482B3D867100204C49 /* TodoEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodoEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FF30F8492B3D867100204C49 /* TodoEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodoEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FF30F84C2B3D8BB100204C49 /* TLNoTodosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLNoTodosView.swift; sourceTree = "<group>"; };
+		FF68098B2B3D81630064A7B0 /* MainContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MainContainer.xcdatamodel; sourceTree = "<group>"; };
 		FF6E7DDA2B39556F0001C88F /* TLTodoStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLTodoStatusView.swift; sourceTree = "<group>"; };
-		FF6E7DDD2B395AC80001C88F /* TLTodoListViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLTodoListViewViewModel.swift; sourceTree = "<group>"; };
+		FF6E7DDD2B395AC80001C88F /* TLTodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLTodoViewModel.swift; sourceTree = "<group>"; };
 		FF6E7DE12B395F220001C88F /* TLModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLModelData.swift; sourceTree = "<group>"; };
+		FF8639242B3ADBA000150A4F /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		FF8639262B3ADBFA00150A4F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		FFC7ED652B3D6AF3004769EB /* TLPersistenceMananger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLPersistenceMananger.swift; sourceTree = "<group>"; };
 		FFCF33232B368A6300143DED /* TLTodoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLTodoItem.swift; sourceTree = "<group>"; };
 		FFCF33252B368C6000143DED /* TLTodoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLTodoItemView.swift; sourceTree = "<group>"; };
+		FFE0FB9C2B3A811E007DA560 /* TLSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,10 +84,12 @@
 			isa = PBXGroup;
 			children = (
 				FF2DD8552B359DD900C90A87 /* TodoListApp.swift */,
+				FFE0FB9B2B3A80FE007DA560 /* Commons */,
 				FFCF33222B368A4100143DED /* Models */,
 				FF2DD8632B35A39100C90A87 /* Views */,
 				FF6E7DDC2B395AA20001C88F /* ViewModels */,
 				FF2DD8592B359DDE00C90A87 /* Assets.xcassets */,
+				FF68098A2B3D81630064A7B0 /* MainContainer.xcdatamodeld */,
 				FF2DD85B2B359DDE00C90A87 /* Preview Content */,
 			);
 			path = TodoList;
@@ -89,11 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				FF2DD8572B359DD900C90A87 /* ContentView.swift */,
-				FF2DD8642B35A42300C90A87 /* TLTodoListView.swift */,
-				FF2DD8682B35B51D00C90A87 /* TLTodoCreationView.swift */,
-				FF2DD86A2B35B5CC00C90A87 /* TLTodoTextFieldView.swift */,
-				FFCF33252B368C6000143DED /* TLTodoItemView.swift */,
-				FF6E7DDA2B39556F0001C88F /* TLTodoStatusView.swift */,
+				FF73B1F52B3C30B500664276 /* TodoList */,
+				FF73B1F62B3C30F600664276 /* TodoCreation */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -101,18 +116,51 @@
 		FF6E7DDC2B395AA20001C88F /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				FF6E7DDD2B395AC80001C88F /* TLTodoListViewViewModel.swift */,
+				FF6E7DDD2B395AC80001C88F /* TLTodoViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		FF73B1F52B3C30B500664276 /* TodoList */ = {
+			isa = PBXGroup;
+			children = (
+				FF2DD8642B35A42300C90A87 /* TLTodoListView.swift */,
+				FFCF33252B368C6000143DED /* TLTodoItemView.swift */,
+				FF6E7DDA2B39556F0001C88F /* TLTodoStatusView.swift */,
+				FF30F84C2B3D8BB100204C49 /* TLNoTodosView.swift */,
+			);
+			path = TodoList;
+			sourceTree = "<group>";
+		};
+		FF73B1F62B3C30F600664276 /* TodoCreation */ = {
+			isa = PBXGroup;
+			children = (
+				FF2DD8682B35B51D00C90A87 /* TLTodoCreationView.swift */,
+			);
+			path = TodoCreation;
 			sourceTree = "<group>";
 		};
 		FFCF33222B368A4100143DED /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FF30F8482B3D867100204C49 /* TodoEntity+CoreDataClass.swift */,
+				FF30F8492B3D867100204C49 /* TodoEntity+CoreDataProperties.swift */,
 				FFCF33232B368A6300143DED /* TLTodoItem.swift */,
 				FF6E7DE12B395F220001C88F /* TLModelData.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FFE0FB9B2B3A80FE007DA560 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				FF8639262B3ADBFA00150A4F /* Extensions.swift */,
+				FF8639242B3ADBA000150A4F /* RoundedCorner.swift */,
+				FFC7ED652B3D6AF3004769EB /* TLPersistenceMananger.swift */,
+				FFE0FB9C2B3A811E007DA560 /* TLSheet.swift */,
+				FF2DD86A2B35B5CC00C90A87 /* TLTextInput.swift */,
+			);
+			path = Commons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,16 +233,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF30F84A2B3D867100204C49 /* TodoEntity+CoreDataClass.swift in Sources */,
+				FF8639252B3ADBA000150A4F /* RoundedCorner.swift in Sources */,
 				FFCF33262B368C6000143DED /* TLTodoItemView.swift in Sources */,
 				FF2DD8652B35A42300C90A87 /* TLTodoListView.swift in Sources */,
-				FF2DD86B2B35B5CC00C90A87 /* TLTodoTextFieldView.swift in Sources */,
+				FF2DD86B2B35B5CC00C90A87 /* TLTextInput.swift in Sources */,
+				FFE0FB9D2B3A811E007DA560 /* TLSheet.swift in Sources */,
 				FF2DD8582B359DD900C90A87 /* ContentView.swift in Sources */,
 				FF2DD8692B35B51D00C90A87 /* TLTodoCreationView.swift in Sources */,
-				FF6E7DDE2B395AC80001C88F /* TLTodoListViewViewModel.swift in Sources */,
+				FF6E7DDE2B395AC80001C88F /* TLTodoViewModel.swift in Sources */,
+				FF30F84B2B3D867100204C49 /* TodoEntity+CoreDataProperties.swift in Sources */,
+				FF8639272B3ADBFA00150A4F /* Extensions.swift in Sources */,
+				FF30F84D2B3D8BB200204C49 /* TLNoTodosView.swift in Sources */,
 				FFCF33242B368A6300143DED /* TLTodoItem.swift in Sources */,
 				FF6E7DE22B395F220001C88F /* TLModelData.swift in Sources */,
 				FF2DD8562B359DD900C90A87 /* TodoListApp.swift in Sources */,
+				FFC7ED662B3D6AF3004769EB /* TLPersistenceMananger.swift in Sources */,
 				FF6E7DDB2B39556F0001C88F /* TLTodoStatusView.swift in Sources */,
+				FF68098C2B3D81630064A7B0 /* MainContainer.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,8 +391,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -366,8 +422,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -404,6 +460,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FF68098A2B3D81630064A7B0 /* MainContainer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FF68098B2B3D81630064A7B0 /* MainContainer.xcdatamodel */,
+			);
+			currentVersion = FF68098B2B3D81630064A7B0 /* MainContainer.xcdatamodel */;
+			path = MainContainer.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FF2DD84A2B359DD900C90A87 /* Project object */;
 }
