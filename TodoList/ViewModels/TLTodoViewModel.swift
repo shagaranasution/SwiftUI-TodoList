@@ -45,11 +45,6 @@ public final class TLTodoViewModel: ObservableObject {
         saveData()
     }
     
-    public func updateTodoStatus(atIndex index: Int) {
-        todos[index].completed.toggle()
-        saveData()
-    }
-    
     public func addTodo(
         withTitle title: String,
         note: String? = nil,

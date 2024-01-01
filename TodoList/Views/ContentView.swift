@@ -8,10 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject private var viewModel: TLTodoViewModel = TLTodoViewModel()
+    
     var body: some View {
         NavigationView {
             TLTodoListView()
         }
+        .environmentObject(viewModel)
     }
 }
 

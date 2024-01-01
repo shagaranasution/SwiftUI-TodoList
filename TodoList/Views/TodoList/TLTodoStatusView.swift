@@ -9,23 +9,32 @@ import SwiftUI
 
 public struct TLTodoStatusView: View {
     
-    @Binding public var completed: Bool
+    @EnvironmentObject var viewModel: TLTodoViewModel
+    @Binding public var todo: TodoEntity
     
     public var body: some View {
-        let imageName: String = completed ? "checkmark.seal.fill" : "circle.fill"
-        let width: CGFloat = completed ? 28 : 24
+        let imageName: String = todo.completed ? "checkmark.seal.fill" : "circle"
+        let width: CGFloat = todo.completed ? 28 : 24
         let height: CGFloat = width
         
         return Image(systemName: imageName)
             .resizable()
             .frame(width: width)
             .frame(height: height)
-            .offset(x: completed ? 2 : 0)
-            .offset(y: completed ? -2 : 0)
+            .offset(x: todo.completed ? 2 : 0)
+            .offset(y: todo.completed ? -2 : 0)
+            .onTapGesture {
+                viewModel.updateTodoStatus(todo)
+            }
     }
     
 }
 
 #Preview {
-    TLTodoStatusView(completed: .constant(true))
+    let todo = TodoEntity(context: TLPersistenceMananger.shared.container.viewContext)
+    todo.title = "Meet Chara"
+    todo.note = "Do not forget to bring her book I borrowed"
+    todo.date = Date()
+    
+    return TLTodoStatusView(todo: .constant(todo))
 }

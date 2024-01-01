@@ -9,7 +9,7 @@ import SwiftUI
 
 public struct TLTodoListView: View {
     
-    @StateObject private var viewModel: TLTodoViewModel = TLTodoViewModel()
+    @EnvironmentObject var viewModel: TLTodoViewModel
     @State private var showedSheet = false
     
     let columns: [GridItem] = [
@@ -69,5 +69,7 @@ public struct TLTodoListView: View {
 #Preview {
     NavigationView {
         TLTodoListView()
+            .environmentObject(TLTodoViewModel()
+            )
     }
 }

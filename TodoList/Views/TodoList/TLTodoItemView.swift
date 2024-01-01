@@ -25,7 +25,7 @@ public struct TLTodoItemView: View {
                 }
                 .padding(.top, -2)
                 Spacer(minLength: 2)
-                TLTodoStatusView(completed: $todo.completed)
+                TLTodoStatusView(todo: $todo)
             }
             VStack(alignment: .leading) {
                 Text(todo.title)
@@ -60,8 +60,13 @@ public struct TLTodoItemView: View {
     todo.note = "Do not forget to bring her book I borrowed"
     todo.date = Date()
     
+    let todo2 = TodoEntity(context: TLPersistenceMananger.shared.container.viewContext)
+    todo2.title = "Going to market"
+    todo2.completed = true
+    todo2.date = Date()
+    
     return Group {
         TLTodoItemView(todo: .constant(todo))
-        TLTodoItemView(todo: .constant(todo))
+        TLTodoItemView(todo: .constant(todo2))
     }
 }
