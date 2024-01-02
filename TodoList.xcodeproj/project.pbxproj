@@ -26,6 +26,7 @@
 		FFC7ED662B3D6AF3004769EB /* TLPersistenceMananger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7ED652B3D6AF3004769EB /* TLPersistenceMananger.swift */; };
 		FFCF33242B368A6300143DED /* TLTodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCF33232B368A6300143DED /* TLTodoItem.swift */; };
 		FFCF33262B368C6000143DED /* TLTodoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCF33252B368C6000143DED /* TLTodoItemView.swift */; };
+		FFD58A602B42D977001583D0 /* TLTodoPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD58A5F2B42D977001583D0 /* TLTodoPreviewView.swift */; };
 		FFE0FB9D2B3A811E007DA560 /* TLSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE0FB9C2B3A811E007DA560 /* TLSheet.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		FFC7ED652B3D6AF3004769EB /* TLPersistenceMananger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLPersistenceMananger.swift; sourceTree = "<group>"; };
 		FFCF33232B368A6300143DED /* TLTodoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLTodoItem.swift; sourceTree = "<group>"; };
 		FFCF33252B368C6000143DED /* TLTodoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLTodoItemView.swift; sourceTree = "<group>"; };
+		FFD58A5F2B42D977001583D0 /* TLTodoPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLTodoPreviewView.swift; sourceTree = "<group>"; };
 		FFE0FB9C2B3A811E007DA560 /* TLSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,6 +130,7 @@
 				FFCF33252B368C6000143DED /* TLTodoItemView.swift */,
 				FF6E7DDA2B39556F0001C88F /* TLTodoStatusView.swift */,
 				FF30F84C2B3D8BB100204C49 /* TLNoTodosView.swift */,
+				FFD58A5F2B42D977001583D0 /* TLTodoPreviewView.swift */,
 			);
 			path = TodoList;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				FFC7ED662B3D6AF3004769EB /* TLPersistenceMananger.swift in Sources */,
 				FF6E7DDB2B39556F0001C88F /* TLTodoStatusView.swift in Sources */,
 				FF68098C2B3D81630064A7B0 /* MainContainer.xcdatamodeld in Sources */,
+				FFD58A602B42D977001583D0 /* TLTodoPreviewView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

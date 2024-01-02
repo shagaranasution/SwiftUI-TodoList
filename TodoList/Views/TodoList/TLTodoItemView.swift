@@ -9,7 +9,7 @@ import SwiftUI
 
 public struct TLTodoItemView: View {
     
-    @Binding public var todo: TodoEntity
+    public let todo: TodoEntity
     
     public var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -17,6 +17,7 @@ public struct TLTodoItemView: View {
                 Text(todo.date, format: .dateTime.day())
                     .font(.system(size: 44, weight: .semibold))
                     .padding(.top, -8)
+                    .monospacedDigit()
                 VStack(alignment: .leading, spacing: 0) {
                     Text(todo.date, format: .dateTime.month())
                         .fontWeight(.semibold)
@@ -25,7 +26,7 @@ public struct TLTodoItemView: View {
                 }
                 .padding(.top, -2)
                 Spacer(minLength: 2)
-                TLTodoStatusView(todo: $todo)
+                TLTodoStatusView(todo: todo)
             }
             VStack(alignment: .leading) {
                 Text(todo.title)
@@ -56,17 +57,19 @@ public struct TLTodoItemView: View {
 
 #Preview {
     let todo = TodoEntity(context: TLPersistenceMananger.shared.container.viewContext)
+    todo.id = UUID().uuidString
     todo.title = "Meet Chara"
     todo.note = "Do not forget to bring her book I borrowed"
     todo.date = Date()
     
     let todo2 = TodoEntity(context: TLPersistenceMananger.shared.container.viewContext)
+    todo2.id = UUID().uuidString
     todo2.title = "Going to market"
     todo2.completed = true
     todo2.date = Date()
     
     return Group {
-        TLTodoItemView(todo: .constant(todo))
-        TLTodoItemView(todo: .constant(todo2))
+        TLTodoItemView(todo: todo)
+        TLTodoItemView(todo: todo2)
     }
 }

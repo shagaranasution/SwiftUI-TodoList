@@ -11,6 +11,7 @@ public struct TLTodoListView: View {
     
     @EnvironmentObject var viewModel: TLTodoViewModel
     @State private var showedSheet = false
+    @State private var todoToPreview: TodoEntity? = nil
     
     let columns: [GridItem] = [
         GridItem(.flexible(), spacing: 8),
@@ -25,10 +26,10 @@ public struct TLTodoListView: View {
                         .offset(y: UIScreen.main.bounds.height * 0.3)
                 } else {
                     LazyVGrid(columns: columns, spacing: 8) {
-                        ForEach($viewModel.todos) { todo in
+                        ForEach(viewModel.todos) { todo in
                             TLTodoItemView(todo: todo)
                                 .onTapGesture {
-                                    viewModel.updateTodoStatus(todo.wrappedValue)
+                                    todoToPreview = todo
                                 }
                         }
                     }
@@ -40,11 +41,15 @@ public struct TLTodoListView: View {
                 if showedSheet {
                     TLSheet(isShow: $showedSheet) {
                         TLTodoCreationView(
-                            isShow: $showedSheet,
-                            viewModel: viewModel
+                            showed: $showedSheet
                         )
                     }
                     .ignoresSafeArea(.keyboard)
+                }
+                else if todoToPreview != nil {
+                    TLTodoPreviewView(
+                        todo: $todoToPreview
+                    )
                 }
             }
         }
@@ -61,7 +66,7 @@ public struct TLTodoListView: View {
                 
             }
         }
-        .navigationBarHidden(showedSheet)
+        .navigationBarHidden(showedSheet || (todoToPreview != nil))
     }
     
 }
@@ -69,7 +74,7 @@ public struct TLTodoListView: View {
 #Preview {
     NavigationView {
         TLTodoListView()
-            .environmentObject(TLTodoViewModel()
-            )
+            .environmentObject(
+                TLTodoViewModel())
     }
 }

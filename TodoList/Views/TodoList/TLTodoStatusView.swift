@@ -10,7 +10,7 @@ import SwiftUI
 public struct TLTodoStatusView: View {
     
     @EnvironmentObject var viewModel: TLTodoViewModel
-    @Binding public var todo: TodoEntity
+    public let todo: TodoEntity
     
     public var body: some View {
         let imageName: String = todo.completed ? "checkmark.seal.fill" : "circle"
@@ -36,5 +36,5 @@ public struct TLTodoStatusView: View {
     todo.note = "Do not forget to bring her book I borrowed"
     todo.date = Date()
     
-    return TLTodoStatusView(todo: .constant(todo))
+    return TLTodoStatusView(todo: todo)
 }
