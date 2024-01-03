@@ -21,10 +21,7 @@ public struct TLTodoListView: View {
     public var body: some View {
         ZStack(alignment: .center) {
             ScrollView {
-                if viewModel.todos.isEmpty {
-                    TLNoTodosView(showedCreationSheet: $showedSheet)
-                        .offset(y: UIScreen.main.bounds.height * 0.3)
-                } else {
+                if !viewModel.todos.isEmpty {
                     LazyVGrid(columns: columns, spacing: 8) {
                         ForEach(viewModel.todos) { todo in
                             TLTodoItemView(todo: todo)
@@ -34,6 +31,9 @@ public struct TLTodoListView: View {
                         }
                     }
                     .padding(.horizontal)
+                } else {
+                    TLNoTodosView(showedCreationSheet: $showedSheet)
+                        .offset(y: UIScreen.main.bounds.height * 0.3)
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)

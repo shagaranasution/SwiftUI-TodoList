@@ -11,13 +11,13 @@ public struct TLTodoCreationView: View {
     
     public var todo: TodoEntity? = nil
     
-    @State private var title = ""
-    @State private var note = ""
-    @State private var date = Date()
+    @EnvironmentObject var viewModel: TLTodoViewModel
     
     @Binding var showed: Bool
     
-    @EnvironmentObject var viewModel: TLTodoViewModel
+    @State private var title = ""
+    @State private var note = ""
+    @State private var date = Date()
     
     private let dateRange: ClosedRange<Date> = {
         let calendar = Calendar.current
@@ -91,7 +91,6 @@ public struct TLTodoCreationView: View {
                 date = todo.date
             }
         }
-        .navigationTitle("Create Todos")
     }
     
 }

@@ -17,7 +17,8 @@ struct TLTodoPreviewView: View {
         if let safeTodo = todo {
             ZStack(alignment: .bottom) {
                 // background
-                Color(UIColor.systemBackground)
+                Rectangle()
+                    .fill(.thinMaterial)
                     .ignoresSafeArea()
                     .onTapGesture {
                         todo = nil
@@ -101,7 +102,6 @@ struct TLTodoPreviewView: View {
     
     return TLTodoPreviewView(
         todo: .constant(todo)
-        //        showedTodoCreation: .constant(false)
     )
     .environmentObject(TLTodoViewModel())
 }

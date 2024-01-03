@@ -9,6 +9,7 @@ import SwiftUI
 
 public struct TLTodoItemView: View {
     
+    @EnvironmentObject var viewModel: TLTodoViewModel
     public let todo: TodoEntity
     
     public var body: some View {

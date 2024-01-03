@@ -10,7 +10,7 @@ import CoreData
 
 public final class TLTodoViewModel: ObservableObject {
  
-    @Published var todos: [TodoEntity] = []
+    @Published var todos: [TodoEntity] = [] 
     
     private var storeContainer: NSPersistentContainer {
         return TLPersistenceMananger.shared.container
@@ -48,15 +48,6 @@ public final class TLTodoViewModel: ObservableObject {
         return index
     }
     
-    public func updateTodoStatus(_ todo: TodoEntity) {
-        guard
-            let index = getTodoIndex(todo)
-        else { return  }
-        
-        todos[index].completed.toggle()
-        saveData()
-    }
-    
     public func addTodo(
         withTitle title: String,
         note: String,
@@ -83,10 +74,19 @@ public final class TLTodoViewModel: ObservableObject {
             let index = getTodoIndex(todo)
         else { return  }
         
-        
         todos[index].title = title
         todos[index].note = note
         todos[index].date = date
+        
+        saveData()
+    }
+    
+    public func updateTodoStatus(_ todo: TodoEntity) {
+        guard
+            let index = getTodoIndex(todo)
+        else { return  }
+        
+        todos[index].completed.toggle()
         
         saveData()
     }
