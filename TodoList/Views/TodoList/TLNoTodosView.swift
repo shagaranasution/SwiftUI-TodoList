@@ -13,7 +13,7 @@ struct TLNoTodosView: View {
     
     var body: some View {
         VStack(spacing: 8) {
-            Text("There is no todos, yet.")
+            Text("There is no todo, yet.")
                 .font(.title2)
             
             Button {

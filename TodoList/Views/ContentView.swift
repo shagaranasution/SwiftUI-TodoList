@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
         NavigationView {
             TLTodoListView()
@@ -17,4 +18,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+        .environmentObject(TLTodoViewModel())
 }

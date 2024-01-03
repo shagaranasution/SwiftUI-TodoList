@@ -9,8 +9,9 @@ import SwiftUI
 
 public struct TLTodoListView: View {
     
-    @StateObject private var viewModel: TLTodoViewModel = TLTodoViewModel()
+    @EnvironmentObject var viewModel: TLTodoViewModel
     @State private var showedSheet = false
+    @State private var todoToPreview: TodoEntity? = nil
     
     let columns: [GridItem] = [
         GridItem(.flexible(), spacing: 8),
@@ -20,19 +21,19 @@ public struct TLTodoListView: View {
     public var body: some View {
         ZStack(alignment: .center) {
             ScrollView {
-                if viewModel.todos.isEmpty {
-                    TLNoTodosView(showedCreationSheet: $showedSheet)
-                        .offset(y: UIScreen.main.bounds.height * 0.3)
-                } else {
+                if !viewModel.todos.isEmpty {
                     LazyVGrid(columns: columns, spacing: 8) {
-                        ForEach($viewModel.todos) { todo in
+                        ForEach(viewModel.todos) { todo in
                             TLTodoItemView(todo: todo)
                                 .onTapGesture {
-                                    viewModel.updateTodoStatus(todo.wrappedValue)
+                                    todoToPreview = todo
                                 }
                         }
                     }
                     .padding(.horizontal)
+                } else {
+                    TLNoTodosView(showedCreationSheet: $showedSheet)
+                        .offset(y: UIScreen.main.bounds.height * 0.3)
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -40,11 +41,15 @@ public struct TLTodoListView: View {
                 if showedSheet {
                     TLSheet(isShow: $showedSheet) {
                         TLTodoCreationView(
-                            isShow: $showedSheet,
-                            viewModel: viewModel
+                            showed: $showedSheet
                         )
                     }
                     .ignoresSafeArea(.keyboard)
+                }
+                else if todoToPreview != nil {
+                    TLTodoPreviewView(
+                        todo: $todoToPreview
+                    )
                 }
             }
         }
@@ -61,7 +66,7 @@ public struct TLTodoListView: View {
                 
             }
         }
-        .navigationBarHidden(showedSheet)
+        .navigationBarHidden(showedSheet || (todoToPreview != nil))
     }
     
 }
@@ -69,5 +74,7 @@ public struct TLTodoListView: View {
 #Preview {
     NavigationView {
         TLTodoListView()
+            .environmentObject(
+                TLTodoViewModel())
     }
 }

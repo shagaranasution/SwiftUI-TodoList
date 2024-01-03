@@ -9,13 +9,15 @@ import SwiftUI
 
 public struct TLTodoCreationView: View {
     
+    public var todo: TodoEntity? = nil
+    
+    @EnvironmentObject var viewModel: TLTodoViewModel
+    
+    @Binding var showed: Bool
+    
     @State private var title = ""
     @State private var note = ""
     @State private var date = Date()
-    
-    @Binding var isShow: Bool
-    
-    @ObservedObject var viewModel: TLTodoViewModel
     
     private let dateRange: ClosedRange<Date> = {
         let calendar = Calendar.current
@@ -58,13 +60,20 @@ public struct TLTodoCreationView: View {
             Spacer()
             
             Button {
-                viewModel.addTodo(
-                    withTitle: title,
-                    note: note,
-                    date: date
-                )
-
-                isShow.toggle()
+                if let todo = todo {
+                    viewModel.updateTodo(
+                        todo,
+                        withNewTitle: title,
+                        note: note,
+                        date: date)
+                } else {
+                    viewModel.addTodo(
+                        withTitle: title,
+                        note: note,
+                        date: date
+                    )
+                }
+                showed.toggle()
             } label: {
                 Text("Save".uppercased())
                     .font(.headline)
@@ -75,7 +84,13 @@ public struct TLTodoCreationView: View {
                     .clipShape(.rect(cornerRadius: 10))
             }
         }
-        .navigationTitle("Create Todos")
+        .onAppear {
+            if let todo = todo {
+                title = todo.title
+                note = todo.note ?? ""
+                date = todo.date
+            }
+        }
     }
     
 }
@@ -83,8 +98,9 @@ public struct TLTodoCreationView: View {
 #Preview {
     NavigationView {
         TLTodoCreationView(
-            isShow: .constant(true), viewModel: TLTodoViewModel()
+            showed: .constant(true)
         )
         .background(Color(UIColor.secondarySystemBackground))
+        .environmentObject(TLTodoViewModel())
     }
 }
