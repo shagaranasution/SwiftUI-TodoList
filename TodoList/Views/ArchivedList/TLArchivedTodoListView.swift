@@ -31,6 +31,7 @@ public struct TLArchivedTodoListView: View {
         }
         .padding(.top, 16)
         .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle("Archive")
     }
     
 }

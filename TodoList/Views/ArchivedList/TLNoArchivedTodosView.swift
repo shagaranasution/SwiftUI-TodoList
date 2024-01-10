@@ -13,7 +13,7 @@ public struct TLNoArchivedTodosView: View {
     
     public var body: some View {
         VStack(spacing: 8) {
-            Text("There is no archived.")
+            Text("There is no archive.")
                 .font(.title2)
             
             Button {
