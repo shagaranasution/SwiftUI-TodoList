@@ -7,24 +7,33 @@
 
 import Foundation
 import CoreData
+import Combine
 
 public final class TLTodoViewModel: ObservableObject {
  
     @Published var todos: [TodoEntity] = [] 
     
+    var cancellables = Set<AnyCancellable>()
+    
     private var storeContainer: NSPersistentContainer {
         return TLPersistenceMananger.shared.container
     }
+    
+    // MARK: - Initialization
     
     init() {
         fetchTodos()
     }
     
+    // MARK: - Private Methods
+    
     private func fetchTodos() {
         do {
             let request: NSFetchRequest<TodoEntity> = TodoEntity.fetchRequest()
             let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
+            
             request.sortDescriptors = [sortDescriptor]
+            request.returnsObjectsAsFaults = false
             todos = try storeContainer.viewContext.fetch(request)
         } catch {
             print("Error fetching todos: \(error)")
@@ -47,6 +56,8 @@ public final class TLTodoViewModel: ObservableObject {
         
         return index
     }
+    
+    // MARK: - Public Methods
     
     public func addTodo(
         withTitle title: String,
@@ -87,6 +98,36 @@ public final class TLTodoViewModel: ObservableObject {
         else { return  }
         
         todos[index].completed.toggle()
+        
+        saveData()
+    }
+    
+    public func archiveTodo(_ todo: TodoEntity) {
+        guard
+            let index = getTodoIndex(todo)
+        else { return  }
+        
+        todos[index].archived = true
+        
+        saveData()
+    }
+    
+    public func unarchiveTodo(_ todo: TodoEntity) {
+        guard
+            let index = todos.firstIndex(of: todo)
+        else { return }
+        
+        todos[index].archived = false
+        
+        saveData()
+    }
+    
+    public func deleteTodo(_ todo: TodoEntity) {
+        guard
+            let index = todos.firstIndex(of: todo)
+        else { return }
+        let todoToRemove = todos[index]
+        storeContainer.viewContext.delete(todoToRemove)
         
         saveData()
     }

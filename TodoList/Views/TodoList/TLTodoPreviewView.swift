@@ -48,18 +48,37 @@ struct TLTodoPreviewView: View {
                         Text(note)
                             .multilineTextAlignment(.center)
                     }
-                    Button {
-                        showedTodoCreationSheet = true
-                    } label: {
-                        Text("Edit Todo")
-                            .font(.headline)
-                            .foregroundStyle(Color.primary)
-                            .padding(.vertical, 8)
-                            .padding(.horizontal, 32)
-                            .overlay {
-                                Capsule(style: .circular)
-                                    .stroke(Color.primary, lineWidth: 1)
-                            }
+                    HStack(spacing: 16) {
+                        Button {
+                            showedTodoCreationSheet = true
+                        } label: {
+                            Text("Edit")
+                                .frame(maxWidth: .infinity)
+                                .font(.headline)
+                                .foregroundStyle(Color.primary)
+                                .padding(.vertical, 8)
+                                .padding(.horizontal, 32)
+                                .overlay {
+                                    Capsule(style: .circular)
+                                        .stroke(Color.primary, lineWidth: 1)
+                                }
+                        }
+                        Spacer()
+                        Button {
+                            viewModel.archiveTodo(safeTodo)
+                            todo = nil
+                        } label: {
+                            Text("Archive")
+                                .frame(maxWidth: .infinity)
+                                .font(.headline)
+                                .foregroundStyle(Color.primary)
+                                .padding(.vertical, 8)
+                                .padding(.horizontal, 32)
+                                .overlay {
+                                    Capsule(style: .circular)
+                                        .stroke(Color.primary, lineWidth: 1)
+                                }
+                        }
                     }
                     
                 }

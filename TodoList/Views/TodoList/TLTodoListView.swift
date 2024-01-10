@@ -13,6 +13,10 @@ public struct TLTodoListView: View {
     @State private var showedSheet = false
     @State private var todoToPreview: TodoEntity? = nil
     
+    private var unarchivedTodos: [TodoEntity] {
+        viewModel.todos.filter { !$0.archived }
+    }
+    
     let columns: [GridItem] = [
         GridItem(.flexible(), spacing: 8),
         GridItem(.flexible(), spacing: 8)
@@ -21,9 +25,9 @@ public struct TLTodoListView: View {
     public var body: some View {
         ZStack(alignment: .center) {
             ScrollView {
-                if !viewModel.todos.isEmpty {
+                if !unarchivedTodos.isEmpty {
                     LazyVGrid(columns: columns, spacing: 8) {
-                        ForEach(viewModel.todos) { todo in
+                        ForEach(unarchivedTodos, id: \.id) { todo in
                             TLTodoItemView(todo: todo)
                                 .onTapGesture {
                                     todoToPreview = todo
@@ -50,20 +54,29 @@ public struct TLTodoListView: View {
                     TLTodoPreviewView(
                         todo: $todoToPreview
                     )
+                    .transition(AnyTransition.opacity.animation(.easeIn))
                 }
             }
         }
         .navigationTitle("Todos")
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-                Button {
-                    showedSheet.toggle()
-                } label: {
-                    Image(systemName: "plus")
-                        .font(.system(size: 20, weight: .semibold))
-                        .foregroundStyle(Color.primary)
+                HStack(spacing: 0) {
+                    NavigationLink {
+                        TLArchivedTodoListView()
+                    } label: {
+                        Image(systemName: "archivebox.fill")
+                            .font(.system(size: 18, weight: .semibold))
+                            .foregroundStyle(Color.primary)
+                    }
+                    Button {
+                        showedSheet.toggle()
+                    } label: {
+                        Image(systemName: "plus")
+                            .font(.system(size: 20, weight: .semibold))
+                            .foregroundStyle(Color.primary)
+                    }
                 }
-                
             }
         }
         .navigationBarHidden(showedSheet || (todoToPreview != nil))

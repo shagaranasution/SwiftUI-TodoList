@@ -9,8 +9,17 @@ import SwiftUI
 
 public struct TLTodoStatusView: View {
     
-    @EnvironmentObject var viewModel: TLTodoViewModel
+    @EnvironmentObject private var viewModel: TLTodoViewModel
     public let todo: TodoEntity
+    public let disabled: Bool
+    
+    public init(
+        todo: TodoEntity,
+        disabled: Bool = false
+    ) {
+        self.todo = todo
+        self.disabled = disabled
+    }
     
     public var body: some View {
         let imageName: String = todo.completed ? "checkmark.seal.fill" : "circle"
@@ -26,6 +35,7 @@ public struct TLTodoStatusView: View {
             .onTapGesture {
                 viewModel.updateTodoStatus(todo)
             }
+            .disabled(disabled)
     }
     
 }
