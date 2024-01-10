@@ -27,7 +27,7 @@ public struct TLTodoListView: View {
             ScrollView {
                 if !unarchivedTodos.isEmpty {
                     LazyVGrid(columns: columns, spacing: 8) {
-                        ForEach(unarchivedTodos, id: \.id) { todo in
+                        ForEach(unarchivedTodos) { todo in
                             TLTodoItemView(todo: todo)
                                 .onTapGesture {
                                     todoToPreview = todo

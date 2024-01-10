@@ -19,7 +19,6 @@ public struct TLTodoItemView: View {
                     Text(todo.date, format: .dateTime.day())
                         .font(.system(size: 44, weight: .semibold))
                         .padding(.top, -8)
-                        .monospacedDigit()
                     VStack(alignment: .leading, spacing: 0) {
                         Text(todo.date, format: .dateTime.month())
                             .fontWeight(.semibold)

@@ -19,6 +19,10 @@ public struct TLTodoCreationView: View {
     @State private var note = ""
     @State private var date = Date()
     
+    var isSaveDisable: Bool {
+        !viewModel.validateInput(ofText: title)
+    }
+    
     private let dateRange: ClosedRange<Date> = {
         let calendar = Calendar.current
         let startDate = Date.now
@@ -45,7 +49,6 @@ public struct TLTodoCreationView: View {
                 label: "Note",
                 variant: .textEditor
             )
-            
             
             DatePicker(
                 selection: $date,
@@ -80,9 +83,11 @@ public struct TLTodoCreationView: View {
                     .tint(Color.primary)
                     .padding()
                     .frame(maxWidth: .infinity)
-                    .background(Color.teal)
+                    .background(isSaveDisable ?
+                                Color(UIColor.systemGray5): Color.teal)
                     .clipShape(.rect(cornerRadius: 10))
             }
+            .disabled(isSaveDisable)
         }
         .onAppear {
             if let todo = todo {

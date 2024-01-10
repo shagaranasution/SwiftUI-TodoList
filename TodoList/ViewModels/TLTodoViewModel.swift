@@ -11,7 +11,7 @@ import Combine
 
 public final class TLTodoViewModel: ObservableObject {
  
-    @Published var todos: [TodoEntity] = [] 
+    @Published private(set) var todos: [TodoEntity] = []
     
     var cancellables = Set<AnyCancellable>()
     
@@ -58,6 +58,16 @@ public final class TLTodoViewModel: ObservableObject {
     }
     
     // MARK: - Public Methods
+    
+    public func validateInput(ofText text: String) -> Bool {
+        guard
+            text.trimmingCharacters(in: .whitespaces).count > 2
+        else {
+            return false
+        }
+        
+        return true
+    }
     
     public func addTodo(
         withTitle title: String,

@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct TLSheet<Content: View>: View {
+struct TLSheet<Content>: View where Content: View {
     
     @Binding public var isShow: Bool
-    public var content: () -> Content
+    @ViewBuilder public var content: () -> Content
     
     var body: some View {
         ZStack(alignment: .bottom) {

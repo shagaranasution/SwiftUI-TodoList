@@ -18,7 +18,7 @@ public struct TLArchivedTodoListView: View {
     public var body: some View {
         ScrollView {
             if !archivedTodos.isEmpty {
-                ForEach(archivedTodos, id: \.id) { todo in
+                ForEach(archivedTodos) { todo in
                     ZStack {
                         TLArchivedTodoItemView(todo: todo)
                     }
@@ -26,9 +26,10 @@ public struct TLArchivedTodoListView: View {
                 }
             } else {
                 TLNoArchivedTodosView()
-                    .offset(y: UIScreen.main.bounds.height * 0.4)
+                    .offset(y: UIScreen.main.bounds.height * 0.35)
             }
         }
+        .padding(.top, 16)
         .navigationBarTitleDisplayMode(.inline)
     }
     
