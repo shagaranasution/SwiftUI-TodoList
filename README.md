@@ -6,6 +6,7 @@ Todo List App with SwiftUI.
 * MVVM
 * SwiftUI
 * Persistent data with CoreData
+* Light/Dark mode
 
 # Preview
 ![Todos Screen](./Screenshots/1_Todos.png)
